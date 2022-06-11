@@ -1,0 +1,28 @@
+header {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.header-title {
+    height: 100px;
+    background-color: #2C2C2C;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.header-nav {
+    background-color: #c4c4c4;
+    width:auto;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.header-nav a{
+    color:#FFFFFF;
+    padding: 0 30px;
+}

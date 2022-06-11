@@ -1,9 +1,15 @@
-<div class="">
-    <div class="" *ngFor="let product of products">
-        <a [title]="product.name + ' details'"
-           [routerLink]="['/products', product.id]">{{ product.name }}</a>
-        {{product.price | currency}}
+<div class="container">  
+    <div class="product-div" *ngFor="let product of products">
         <img src="{{product.url}}" alt="{{product.name}}">
-        <button >ADD TO CART</button>
+        <div class="info-div">
+        <a  class="product-title"
+            [title]="product.name + ' details'"
+            [routerLink]="['/products', product.id]">{{ product.name }}</a>
+            <div></div>
+            <span>{{product.price | currency}}</span>
+        </div>
+        <form (ngSubmit)="addToCart(product)">
+            <button type="button" (click)="addToCart(product)" class="add-button">ADD TO CART</button>
+        </form>
     </div>
 </div>

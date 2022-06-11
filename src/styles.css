@@ -11,3 +11,7 @@ a {
 a:visited {
     text-decoration: none
 }
+
+textarea:focus, input:focus{
+    outline: none;
+}
