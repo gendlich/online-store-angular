@@ -1,3 +1,7 @@
+*{
+    color: #FFFFFF;
+}
+
 .container{
     display: flex;
     align-items: center;
@@ -26,6 +30,14 @@
     text-align: center;
 }
 
+.product-name, .product-text {
+    color:#2C2C2C
+}
+
+.product-name {
+    font-size: 2em;
+}
+
 .add-button{
     background-color: #C4C4C4;
     border: none;
@@ -47,3 +59,11 @@
     display: inline-block;
     font-size: 16px;
 }
+
+.quantity-select select {
+    background-color: #2C2C2C;
+    width:200px;
+    border: none;
+    font-size: 20px;
+    outline: none;
+  }

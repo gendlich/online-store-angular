@@ -11,6 +11,8 @@ export class CartComponent implements OnInit {
 
   items = this.cartService.getItems();
 
+  totalPrice = this.cartService.getTotal();
+
   checkoutForm = this.formBuilder.group({
     fullName: '',
     address: '',
@@ -31,4 +33,8 @@ export class CartComponent implements OnInit {
     this.checkoutForm.reset();
   }
 
+  onReset(): void {
+    this.items = this.cartService.clearCart();
+    window.alert(`Your cart has been emptied`)
+  }
 }

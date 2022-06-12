@@ -17,7 +17,7 @@
   </form>
   </div>
   <div class="cart-div">
-    <table>
+    <table style="border-bottom: 1px solid #C4C4C4;">
       <thead>
         <tr>
           <th>Name</th>
@@ -33,5 +33,7 @@
           <td>{{ item.quantity }}</td>
           <td>{{ (item.quantity * item.price) | currency  }}</td>
     </table>
+    <h4>TOTAL: {{totalPrice | currency}}</h4>
+    <button class="add-button" (click)="onReset()">CLEAR CART</button>
   </div>
 </div>

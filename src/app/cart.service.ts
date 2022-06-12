@@ -22,4 +22,12 @@ export class CartService {
     this.items = [];
     return this.items;
   }
+
+  getTotal() {
+    let totalPrice = 0; 
+    for (var i = 0; i < this.items.length; i ++) {
+      totalPrice += (this.items[i].quantity*this.items[i].price)
+    }
+    return totalPrice;
+  }
 }

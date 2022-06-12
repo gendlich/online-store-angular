@@ -1,3 +1,7 @@
+*{
+   color: #FFFFFF;
+}
+
 .container{
     display: flex;
     align-items: center;
@@ -12,8 +16,9 @@
     border-radius: 3px;
 }
 
-.product-title{
+.product-title, .product-price{
     font-size: 2em;
+    color: #2C2C2C;
 }
 
 .info-div{
@@ -43,3 +48,11 @@
     display: inline-block;
     font-size: 16px;
 }
+
+  .quantity-select select {
+    background-color: #2C2C2C;
+    width: 100%;
+    border: none;
+    font-size: 20px;
+    outline: none;
+  }

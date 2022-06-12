@@ -4,14 +4,16 @@
             <img src="{{product.url}}" alt="{{product.name}}">
         </div>
         <div class="info-div">
-            <h3>{{ product.name }}</h3>
-            <h4>{{ product.price | currency }}</h4>
-            <p>{{ product.description }}</p>
+            <h3 class="product-name">{{ product.name }}</h3>
+            <h4 class="product-name">{{ product.price | currency }}</h4>
+            <p class="product-text">{{ product.description }}</p>
             <form (ngSubmit)="addToCart(product)">
-                <select [ngModelOptions]="{standalone: true}" [(ngModel)]="product.quantity">
-                    <option [ngValue]="undefined" disabled>Select An Option</option>
-                    <option [value]="o" *ngFor="let o of options">{{o}}</option>
-                </select>            
+                <div class="quantity-select">
+                    <select [ngModelOptions]="{standalone: true}" [(ngModel)]="product.quantity">
+                        <option [ngValue]="undefined" disabled>Select An Option</option>
+                        <option [value]="o" *ngFor="let o of options">{{o}}</option>
+                    </select>            
+                </div>
                 <button type="submit" class="add-button">ADD TO CART</button>
             </form>
         </div>

@@ -1,3 +1,7 @@
+*{
+    color: #2C2C2C;
+}
+
 .container{
     display: flex;
     align-items: center;
@@ -10,10 +14,9 @@
 }
 
 .cart-div{
-    width: 15%;
+    width: 20%;
     border: 1px #C4C4C4 solid;
     margin-left: 2%;
-    padding: 25px 0;
 }
 
 input {
