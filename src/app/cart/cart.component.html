@@ -22,12 +22,16 @@
         <tr>
           <th>Name</th>
           <th>Price</th>
+          <th>Quantity</th>
+          <th>Sub Total</th>
         </tr>
       </thead>
       <tbody *ngFor="let item of items">
         <tr>
           <td>{{ item.name }}</td>
           <td>{{ item.price | currency }}</td>
+          <td>{{ item.quantity }}</td>
+          <td>{{ (item.quantity * item.price) | currency  }}</td>
     </table>
   </div>
 </div>

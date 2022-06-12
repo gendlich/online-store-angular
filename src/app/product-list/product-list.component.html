@@ -9,7 +9,11 @@
             <span>{{product.price | currency}}</span>
         </div>
         <form (ngSubmit)="addToCart(product)">
-            <button type="button" (click)="addToCart(product)" class="add-button">ADD TO CART</button>
+            <select [ngModelOptions]="{standalone: true}" [(ngModel)]="product.quantity">
+                <option [ngValue]="undefined" disabled>Select An Option</option>
+                <option [value]="o" *ngFor="let o of options">{{o}}</option>
+            </select>            
+            <button type="submit" class="add-button">ADD TO CART</button>
         </form>
     </div>
 </div>

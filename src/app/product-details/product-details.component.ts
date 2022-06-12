@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CartService } from '../cart.service';
 
-import { Product, products } from '../products';
+import { Product, products, options } from '../products';
 
 @Component({
   selector: 'app-product-details',
@@ -10,6 +10,8 @@ import { Product, products } from '../products';
   styleUrls: ['./product-details.component.css']
 })
 export class ProductDetailsComponent implements OnInit {
+
+  options = options;
 
   product: Product | undefined;
   constructor(
