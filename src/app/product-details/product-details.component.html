@@ -4,8 +4,8 @@
             <img src="{{product.url}}" alt="{{product.name}}">
         </div>
         <div class="info-div">
-            <h3 class="product-name">{{ product.name }}</h3>
-            <h4 class="product-name">{{ product.price | currency }}</h4>
+            <h3 class="product-title">{{ product.name }}</h3>
+            <h4 class="product-title">{{ product.price | currency }}</h4>
             <p class="product-text">{{ product.description }}</p>
             <form (ngSubmit)="addToCart(product)">
                 <div class="quantity-select">

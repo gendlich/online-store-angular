@@ -6,7 +6,7 @@
             [title]="product.name + ' details'"
             [routerLink]="['/products', product.id]">{{ product.name }}</a>
             <div></div>
-            <span class="product-price">{{product.price | currency}}</span>
+            <span class="product-title">{{product.price | currency}}</span>
         </div>
         <form (ngSubmit)="addToCart(product)">
             <div class="quantity-select">
