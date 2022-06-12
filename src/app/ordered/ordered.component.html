@@ -1,0 +1,7 @@
+<div class="container">
+    <h1 class="success">SUCCESS!</h1>
+    <p>Thank you, <strong>{{ data.fullName }}</strong>.</p>
+    <p>Your <strong>{{ data.totalPrice | currency }}</strong> order is confirmed!</p>
+    <p>Your order will be delivered on <strong>{{ data.address }}</strong> within 1~3 business days.</p>
+    <button [routerLink]="['/']" class="add-button" (click)="onReturnButton()">BACK TO PRODUCT LIST</button>
+</div>

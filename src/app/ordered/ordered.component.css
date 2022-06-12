@@ -1,0 +1,10 @@
+* {
+    color: #2c2c2c;
+}
+
+.container {
+    flex-flow: column wrap;
+    text-align: center;
+    width: 500px;
+    margin:auto;
+}
