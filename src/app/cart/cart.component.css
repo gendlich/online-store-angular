@@ -20,3 +20,20 @@ input {
   border: 1px #C4C4C4 solid;
 }
 
+.remove-button{
+    background-color: #C4C4C4;
+    border: none;
+    color: white;
+    text-decoration: none;
+    width: 40px;
+    padding: 10px 10px;
+}
+
+.remove-button:hover{
+    background-color: #2C2C2C;
+    border: none;
+    color: white;
+    text-decoration: none;
+}
+
+

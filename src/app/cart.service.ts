@@ -30,4 +30,8 @@ export class CartService {
     }
     return totalPrice;
   }
+
+  deleteItem(i: number) {
+    this.items.splice(i , 1);
+  }
 }

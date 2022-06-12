@@ -35,7 +35,14 @@ export class CartComponent implements OnInit {
 
   onReset(): void {
     this.items = this.cartService.clearCart();
+    this.totalPrice = this.cartService.getTotal();
     window.alert(`Your cart has been emptied`);
-    this.totalPrice = 0;
+  }
+
+  onDeleteButton(i: number) {
+    this.cartService.deleteItem(i);
+    this.items = this.cartService.getItems();
+    this.totalPrice = this.cartService.getTotal();
+    window.alert(`Your item has been removed`);
   }
 }

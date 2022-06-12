@@ -26,9 +26,10 @@
           <th>Sub Total</th>
         </tr>
       </thead>
-      <tbody *ngFor="let item of items">
+      <tbody *ngFor="let item of items;let i = index">
         <tr>
-          <td>{{ item.name }}</td>
+          <td><button class="remove-button" (click)="onDeleteButton(i)">X</button> {{ item.name }}
+          </td>
           <td>{{ item.price | currency }}</td>
           <td>{{ item.quantity }}</td>
           <td>{{ (item.quantity * item.price) | currency  }}</td>
