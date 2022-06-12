@@ -3,17 +3,22 @@
     <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
       <div>
         <label for="fullName">Name</label>
-        <input id="fullName" type="text" formControlName="fullName">
+        <input id="fullName" type="text" formControlName="fullName" placeholder="minimum 4 digit">
+        <p class="alert" *ngIf="checkoutForm.get('fullName')?.errors?.['minlength'] ">Name is too short(min 4 digit)</p>
       </div>
       <div>
         <label for="address">Address</label>
-        <input id="address" type="text" formControlName="address">
+        <input id="address" type="text" formControlName="address" placeholder="minimum 6 digit">
+        <p class="alert" *ngIf="checkoutForm.get('address')?.errors?.['minlength'] ">Address is too short(min 6 digit)</p>
       </div>
       <div>
         <label for="creditCardNumber">Credit Card Number</label>
-        <input id="creditCardNumber" type="text" formControlName="creditCardNumber">
+        <input id="creditCardNumber" type="text" formControlName="creditCardNumber" placeholder="16-digit credit card">
+        <p class="alert" *ngIf="checkoutForm.get('creditCardNumber')?.errors?.['maxlength'] ">Credit Card Number is too long(has to be 16-digit long)</p>
+        <p class="alert" *ngIf="checkoutForm.get('creditCardNumber')?.errors?.['minlength'] ">Credit Card Number is too short(has to be 16-digit long)</p>
       </div>
-      <button class="add-button" type="submit">Purchase</button>
+      <p class="alert" *ngIf="!checkoutForm.valid">There are missing or invalid information</p>
+      <button class="add-button" type="submit" [disabled]="!checkoutForm.valid">Purchase</button>
   </form>
   </div>
   <div class="cart-div">
@@ -34,7 +39,8 @@
           <td>{{ item.quantity }}</td>
           <td>{{ (item.quantity * item.price) | currency  }}</td>
     </table>
-    <h4>TOTAL: {{totalPrice | currency}}</h4>
+    <a *ngIf="totalPrice === 0" [routerLink]="['/']" >Your cart is empty, click here to go to product list.</a>
+    <h4 *ngIf="totalPrice >0">TOTAL: {{totalPrice | currency}}</h4>
     <button class="add-button" (click)="onReset()">CLEAR CART</button>
   </div>
 </div>

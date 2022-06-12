@@ -36,4 +36,8 @@ input {
     text-decoration: none;
 }
 
+.alert {
+    color: #ff0000;
+    margin-top: 5px;
+}
 
