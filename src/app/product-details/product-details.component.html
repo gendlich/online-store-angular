@@ -9,7 +9,7 @@
             <p class="product-text">{{ product.description }}</p>
             <form (ngSubmit)="addToCart(product)">
                 <div class="quantity-select">
-                    <select [ngModelOptions]="{standalone: true}" [(ngModel)]="product.quantity">
+                    <select [ngModelOptions]="{standalone: true}" [(ngModel)]="this.quantity">
                         <option [ngValue]="undefined" disabled>Select An Option</option>
                         <option [value]="o" *ngFor="let o of options">{{o}}</option>
                     </select>            

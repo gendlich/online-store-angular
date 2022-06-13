@@ -1,5 +1,5 @@
 <div class="container">  
-    <div class="product-div" *ngFor="let product of products">
+    <div class="product-div" *ngFor="let product of products;let i = index;">
         <img src="{{product.url}}" alt="{{product.name}}">
         <div class="info-div">
         <a  class="product-title"
@@ -8,9 +8,9 @@
             <div></div>
             <span class="product-title">{{product.price | currency}}</span>
         </div>
-        <form (ngSubmit)="addToCart(product)">
+        <form (ngSubmit)="addToCart(product, i)">
             <div class="quantity-select">
-                <select [ngModelOptions]="{standalone: true}" [(ngModel)]="product.quantity">
+                <select [ngModelOptions]="{standalone: true}" [(ngModel)]="products[i].quantity">
                     <option [ngValue]="undefined" disabled>Select An Option</option>
                     <option [value]="o" *ngFor="let o of options">{{o}}</option>
                 </select>            

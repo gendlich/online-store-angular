@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../cart.service';
-import { Product, products, options } from '../products';
+import { Product, options } from '../products';
+import { ProductsService } from '../products.service';
 
 @Component({
   selector: 'app-product-list',
@@ -8,30 +9,27 @@ import { Product, products, options } from '../products';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
-  products: Product[] = products;
-
+  products: Product[] = [];
   options = options;
 
   constructor(
     private cartService: CartService,
+    private productsService: ProductsService,
     ) { }
 
   ngOnInit(): void {
+    this.productsService.getProducts().subscribe((products: Product[]) => {
+      this.products = products;
+    })
   }
 
-  addToCart(product: Product) {
-    if(product.quantity <= 0) {
-      window.alert(`Cannot add ${product.quantity} of ${product.name} to the cart`)
+  addToCart(product: Product, i:number) {
+    if(product.quantity > 0) {
+      product.quantity = this.products[i].quantity;
+      this.cartService.addToCart(product);
+      window.alert(`${product.name} has been added to cart!`);
     } else {
-      this.cartService.addToCart({
-        id: product.id,
-        name: product.name,
-        price: product.price,
-        url: product.url,
-        description: product.description,
-        quantity: product.quantity,
-      });
-      window.alert(`${product.name} das been added to cart!`); 
+      window.alert(`Cannot add 0 of ${product.name} to the cart`) 
     }
   }
 }
