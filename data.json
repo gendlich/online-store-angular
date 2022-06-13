@@ -1,4 +1,6 @@
-[
+{
+"products":
+  [
     {
       "id": 1,
       "name": "Book",
@@ -42,3 +44,4 @@
       "description": "Wear it with style!"
     }
   ]
+}
