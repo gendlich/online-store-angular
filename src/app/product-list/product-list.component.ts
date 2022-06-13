@@ -23,7 +23,6 @@ export class ProductListComponent implements OnInit {
     if(product.quantity <= 0) {
       window.alert(`Cannot add ${product.quantity} of ${product.name} to the cart`)
     } else {
-
       this.cartService.addToCart({
         id: product.id,
         name: product.name,
