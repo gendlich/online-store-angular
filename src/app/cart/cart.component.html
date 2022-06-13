@@ -7,16 +7,18 @@
           <th>Name</th>
           <th>Price</th>
           <th>Quantity</th>
-          <th>Sub Total</th>
         </tr>
       </thead>
       <tbody *ngFor="let item of items;let i = index">
         <tr>
-          <td><button class="remove-button" (click)="onDeleteButton(i)">X</button> {{ item.name }}
-          </td>
+          <td><button class="remove-button" (click)="onDeleteButton(i)">X</button> {{ item.name }}</td>
           <td>{{ item.price | currency }}</td>
-          <td>{{ item.quantity }}</td>
-          <td>{{ (item.quantity * item.price) | currency  }}</td>
+          <td class="quantity-select">{{item.quantity}}
+            <select [(ngModel)]="newQuantity" (ngModelChange)="changeQuantity(i)">
+              <option [ngValue]="undefined" disabled>Select An Option</option>
+              <option [value]="o" *ngFor="let o of options">{{o}}</option>
+            </select>            
+          </td>
     </table>
     <a *ngIf="totalPrice === 0" [routerLink]="['/']" >Your cart is empty, click here to go to product list.</a>
     <h4 *ngIf="totalPrice >0">TOTAL: {{totalPrice | currency}}</h4>

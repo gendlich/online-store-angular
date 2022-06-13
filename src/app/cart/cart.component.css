@@ -3,7 +3,7 @@
 }
 
 .container {
-    width: 60%;
+    width: 70%;
     margin: auto;
 }
 
@@ -27,5 +27,11 @@
     border: none;
     color: white;
     text-decoration: none;
+}
+
+.quantity-select select {
+    background-color: #FFFFFF;
+    width:15px;
+    padding: 0px;
 }
 
