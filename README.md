@@ -25,3 +25,6 @@ The succeed ordered page.
 
 - Header:
 An Header Component which all routes use.
+
+- Checkout Form: 
+A component that handles the forms and validations.

@@ -8,7 +8,10 @@
 
 .alert {
     color: #ff0000;
-    margin-top: 5px;
+}
+
+.spacing {
+    color: #FFFFFF;
 }
 
 input {
