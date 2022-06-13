@@ -20,15 +20,19 @@ export class ProductListComponent implements OnInit {
   }
 
   addToCart(product: Product) {
-    this.cartService.addToCart({
-      id: product.id,
-      name: product.name,
-      price: product.price,
-      url: product.url,
-      description: product.description,
-      quantity: product.quantity,
-    });
-    console.log(product.quantity)
-    window.alert(`${product.name} das been added to cart!`); 
+    if(product.quantity <= 0) {
+      window.alert(`Cannot add ${product.quantity} of ${product.name} to the cart`)
+    } else {
+
+      this.cartService.addToCart({
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        url: product.url,
+        description: product.description,
+        quantity: product.quantity,
+      });
+      window.alert(`${product.name} das been added to cart!`); 
+    }
   }
 }

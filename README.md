@@ -11,17 +11,17 @@ With JSON Server installed type `json-server --watch data.json`, and check on `h
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 ## Components
-- Product List
+- Product List:
 It shows all products on the data.json.
 
-- Product Details
+- Product Details:
 A page to display extra information about an product.
 
-- Cart
+- Cart:
 An component to list what the user will buy.
 
-- Ordered
+- Ordered:
 The succeed ordered page.
 
-- Header
+- Header:
 An Header Component which all routes use.
