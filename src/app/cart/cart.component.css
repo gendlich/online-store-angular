@@ -2,22 +2,15 @@
     color: #2C2C2C;
 }
 
-.form-div{
-    width: 30%;
+.container {
+    width: 60%;
+    margin: auto;
 }
 
 .cart-div{
-    width: 20%;
+    width: 100%;
     border: 1px #C4C4C4 solid;
     margin-left: 2%;
-}
-
-input {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: 1px #C4C4C4 solid;
 }
 
 .remove-button{
@@ -34,10 +27,5 @@ input {
     border: none;
     color: white;
     text-decoration: none;
-}
-
-.alert {
-    color: #ff0000;
-    margin-top: 5px;
 }
 

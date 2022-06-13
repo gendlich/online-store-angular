@@ -9,6 +9,7 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { CartComponent } from './cart/cart.component';
 import { OrderedComponent } from './ordered/ordered.component';
+import { CheckoutFormComponent } from './checkout-form/checkout-form.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +17,8 @@ import { OrderedComponent } from './ordered/ordered.component';
     ProductListComponent,
     ProductDetailsComponent,
     CartComponent,
-    OrderedComponent
+    OrderedComponent,
+    CheckoutFormComponent
   ],
   imports: [
     BrowserModule,

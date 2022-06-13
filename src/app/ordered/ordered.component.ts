@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from '../cart.service';
 import { OrderedService } from '../ordered.service';
 
 @Component({
@@ -11,12 +12,14 @@ export class OrderedComponent implements OnInit {
 
   constructor(
     private orderedService: OrderedService,
+    private cartService: CartService,
     ) { }
     
     ngOnInit(): void {
     }
 
   onReturnButton():void {
-    this.data = this.orderedService.clearData()
+    this.data = this.orderedService.clearData();
+    this.cartService.clearCart();
   }
 }
